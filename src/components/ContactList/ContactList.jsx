@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
 import Contact from '../Contact/Contact'
-import { selectFilteredContactsMemo } from '../../redux/selectors'
+import { selectFilteredContactsMemo } from '../../redux/contactsSlice'
+// import { selectFilteredContactsMemo } from '../../redux/selectors'
 // import { selectContacts } from '../../redux/contactsSlice'
 
 export default function ContactList() {
