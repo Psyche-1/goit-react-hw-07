@@ -1,5 +1,6 @@
 import { createSlice, createSelector } from "@reduxjs/toolkit";
 import { addContact, deleteContact, fetchContacts } from "./contactsOps";
+import { selectFilterName } from "./filtersSlice";
 
 const initialState = {
   items: [],
@@ -75,7 +76,7 @@ export const contactsReducer = slice.reducer;
 // export const { selectContacts, selectError, selectLoading } = slice.actions;
 
 export const selectContacts = (state) => state.contacts.items;
-export const selectFilterName = (state) => state.filters.name;
+// export const selectFilterName = (state) => state.filters.name;
 
 export const selectFilteredContactsMemo = createSelector(
   [selectContacts, selectFilterName],

@@ -19,13 +19,13 @@ axios.defaults.baseURL = "https://67c5eefb351c081993fbf032.mockapi.io";
 //       return data;
 //     } catch (error) {
 //       console.log(error);
-//       return thunkAPI.rejectWithValue(error.massage);
+//       return thunkAPI.rejectWithValue(error.message);
 //     }
 //   }
 // );
 
 export const fetchContacts = createAsyncThunk(
-  "todos/fetchContacts",
+  "contacts/fetchAll",
   async (_, thunkAPI) => {
     try {
       const { data } = await axios.get(`/contacts`);
@@ -34,26 +34,26 @@ export const fetchContacts = createAsyncThunk(
       return data;
     } catch (error) {
       console.log(error);
-      return thunkAPI.rejectWithValue(error.massage);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
 
 export const deleteContact = createAsyncThunk(
-  "todos/deleteContact",
+  "contacts/deleteContact",
   async (id, thunkAPI) => {
     try {
       await axios.delete(`/contacts/${id}`);
       return id;
     } catch (error) {
       console.log(error);
-      return thunkAPI.rejectWithValue(error.massage);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
 
 export const addContact = createAsyncThunk(
-  "todos/addContact",
+  "contacts/addContact",
   async (body, thunkAPI) => {
     try {
       const { data } = await axios.post(`/contacts/`, body);
@@ -61,7 +61,7 @@ export const addContact = createAsyncThunk(
       return data;
     } catch (error) {
       console.log(error);
-      return thunkAPI.rejectWithValue(error.massage);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
